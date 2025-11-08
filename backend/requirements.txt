@@ -1,0 +1,87 @@
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+python-multipart==0.0.6
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-dotenv==1.0.0
+pydantic==2.5.3
+pydantic-settings==2.1.0
+
+# Database
+sqlalchemy==2.0.25
+alembic==1.13.1
+psycopg2-binary==2.9.9
+asyncpg==0.29.0
+pgvector==0.2.4
+
+# Redis & Caching
+redis==5.0.1
+hiredis==2.3.2
+
+# Celery
+celery==5.3.6
+flower==2.0.1
+
+# AI/ML Libraries
+openai==1.10.0
+anthropic==0.8.1
+transformers==4.37.2
+torch==2.2.0
+sentence-transformers==2.3.1
+scikit-learn==1.4.0
+nltk==3.8.1
+spacy==3.7.2
+langchain==0.1.6
+langchain-openai==0.0.5
+langchain-anthropic==0.0.1
+
+# NLP & Text Processing
+textblob==0.17.1
+vaderSentiment==3.3.2
+gensim==4.3.2
+wordcloud==1.9.3
+
+# Data Processing
+pandas==2.2.0
+numpy==1.26.3
+openpyxl==3.1.2
+xlrd==2.0.1
+python-csv==0.0.13
+
+# HTTP Clients
+httpx==0.26.0
+requests==2.31.0
+aiohttp==3.9.3
+
+# AWS Services
+boto3==1.34.34
+aioboto3==12.3.0
+
+# API Integrations (Optional - install as needed)
+# zenpy==2.0.41  # Zendesk integration
+# python-zendesk==1.1.1  # Alternative Zendesk client
+# hubspot-api-client==8.5.0  # HubSpot integration
+
+# Email
+email-validator==2.1.0
+emails==0.6
+
+# Security
+cryptography==42.0.2
+bcrypt==4.1.2
+
+# Monitoring & Logging
+sentry-sdk==1.40.0
+python-json-logger==2.0.7
+
+# Testing
+pytest==7.4.4
+pytest-asyncio==0.23.4
+pytest-cov==4.1.0
+httpx==0.26.0
+faker==22.6.0
+
+# Utilities
+python-slugify==8.0.4
+python-dateutil==2.8.2
+pytz==2024.1
