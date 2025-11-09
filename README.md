@@ -1,12 +1,6 @@
 # 🚀 AI-Driven Customer Feedback Analyzer
 
-[![Production Ready](https://img.shields.io/badge/status-production%20ready-brightgreen)]()
-[![Docker](https://img.shields.io/badge/docker-ready-blue)]()
-[![License](https://img.shields.io/badge/license-MIT-green)]()
-[![Python](https://img.shields.io/badge/python-3.11+-blue)]()
-[![React](https://img.shields.io/badge/react-18-blue)]()
-
-A **complete, production-ready**, enterprise-grade customer feedback analysis platform with advanced AI/ML capabilities. Built with FastAPI, React, and powered by GPT-4.
+A **complete, production-ready**, enterprise-grade customer feedback analysis platform with advanced AI/ML capabilities. Built with FastAPI, React, and powered by state-of-the-art AI models.
 
 > **⚡ Quick Start:** Run `.\start.ps1` and access the app at http://localhost:3000
 
@@ -20,7 +14,7 @@ Transform customer feedback into **actionable insights** using AI. This platform
 - 😊 **Detects emotions** (joy, anger, sadness, etc.)
 - 🚨 **Scores urgency** (1-10 scale)
 - 🎯 **Prioritizes feedback** (0-100 weighted score)
-- 🤖 **Generates insights** with GPT-4
+- 🤖 **Generates AI-powered insights**
 - 📈 **Visualizes trends** in real-time
 - 🔍 **Identifies patterns** across thousands of feedback items
 
@@ -80,7 +74,7 @@ feedback-analyzer/
 └── README.md
 ```
 
-### Local Development
+### System Architecture
 
 ```
 ┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
@@ -90,24 +84,8 @@ feedback-analyzer/
                                │
                                ├────▶ Redis (Caching)
                                ├────▶ Celery (Background Jobs)
-                               └────▶ AI/ML Models (GPT-4, BERT, etc.)
+                               └────▶ AI/ML Models (Local/API)
 ```
-
-### AWS Production Deployment (Free Tier) ☁️
-
-```
-┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
-│  React Frontend │────▶│  FastAPI Backend │────▶│  Amazon RDS     │
-│   (EC2/S3)      │     │     (EC2)        │     │  (PostgreSQL)   │
-└─────────────────┘     └──────────────────┘     └─────────────────┘
-                               │
-                               ├────▶ ElastiCache (Redis)
-                               ├────▶ Celery Workers (EC2)
-                               ├────▶ Amazon S3 (File Storage)
-                               └────▶ AI/ML Models (GPT-4, HuggingFace)
-```
-
-**🎉 Deploy to AWS Free Tier**: See [AWS_DEPLOYMENT_GUIDE.md](AWS_DEPLOYMENT_GUIDE.md) for step-by-step instructions!
 
 ## 📦 Tech Stack
 
@@ -213,12 +191,27 @@ response = requests.post('http://localhost:8000/api/v1/integrations/zendesk/sync
 
 ### AI Model Setup
 
-Edit `backend/app/config/ai_config.py`:
+The platform supports both local AI models and API-based models:
 
-```python
-OPENAI_API_KEY = "your-key"
-ANTHROPIC_API_KEY = "your-key"
-HUGGINGFACE_TOKEN = "your-token"
+**Local Models (Included):**
+
+- Sentiment Analysis: cardiffnlp/twitter-roberta-base-sentiment-latest
+- Emotion Detection: j-hartmann/emotion-english-distilroberta-base
+- Embeddings: sentence-transformers/all-MiniLM-L6-v2
+
+**API Models (Optional):**
+
+- OpenAI GPT-4 for advanced insights
+- Anthropic Claude for analysis
+- HuggingFace Inference API
+
+Edit `.env` to configure:
+
+```env
+# Optional: For advanced AI features
+OPENAI_API_KEY=your-key-here
+ANTHROPIC_API_KEY=your-key-here
+HUGGINGFACE_TOKEN=your-token-here
 ```
 
 ### Database Configuration
